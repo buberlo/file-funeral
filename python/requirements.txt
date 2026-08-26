@@ -1,0 +1,16 @@
+# File Funeral — Python bridge (python/funeral.py)
+#
+# This manifest is intentionally empty: the scanner/service is built
+# entirely on the Python standard library (json, os, shutil, datetime,
+# uuid, pathlib), so no third-party packages are required to run it.
+#
+# Requirements:
+#   - Python 3.8+ (any recent 3.x works; no C extensions needed)
+#
+# You can safely run:
+#     pip install -r requirements.txt
+# ...and it will install nothing, which is expected.
+#
+# If you extend the bridge with third-party imports, pin them here, e.g.:
+#     requests==2.31.0
+#     rich==13.7.0
