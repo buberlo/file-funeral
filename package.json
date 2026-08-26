@@ -1,0 +1,27 @@
+{
+  "name": "file-funeral",
+  "productName": "File Funeral",
+  "version": "1.0.0",
+  "description": "Local desktop tool that scans folders for stale files, generates metadata-based life stories, and buries them in a restorable mausoleum.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "python",
+    "stale-files",
+    "file-management",
+    "desktop-app"
+  ],
+  "author": "File Funeral",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "electron": "^31.3.0"
+  }
+}
