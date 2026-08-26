@@ -1,0 +1,199 @@
+:root {
+  --bg: #101318;
+  --panel: #171c24;
+  --card: #121720;
+  --ink: #e8e3d8;
+  --muted: #9aa3b2;
+  --line: #2a313d;
+  --accent: #7fd1b9;
+  --danger: #d17f7f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(127, 209, 185, 0.08), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(209, 127, 127, 0.08), transparent 30%),
+    var(--bg);
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  gap: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+}
+
+header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.controls label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  padding: 8px 10px;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+button {
+  border: 1px solid var(--line);
+  background: #202836;
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:hover {
+  border-color: var(--accent);
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0b1014;
+}
+
+button.danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #150c0c;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.status {
+  min-height: 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.file-list,
+.mausoleum-log {
+  display: grid;
+  gap: 12px;
+}
+
+.file-card,
+.log-entry {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.file-card h3,
+.log-entry h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  word-break: break-all;
+}
+
+.meta {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.life-story {
+  margin: 0 0 10px;
+  line-height: 1.45;
+}
+
+.epitaph-prompt {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mausoleum {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+}
+
+.empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #263041;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.badge.stale {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+footer {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
