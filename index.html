@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File Funeral</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <h1>File Funeral</h1>
+      <p>Scan stale files, read their life stories, and rest them with dignity.</p>
+    </div>
+    <nav class="header-actions">
+      <button id="choose-folder" type="button">Choose Folder</button>
+      <button id="scan-folder" type="button" class="primary">Scan</button>
+      <button id="open-mausoleum" type="button">Mausoleum</button>
+    </nav>
+  </header>
+
+  <section id="scan-view" class="view">
+    <div class="controls">
+      <label class="control">
+        <span>Folder</span>
+        <output id="folder-path" for="choose-folder">No folder selected</output>
+      </label>
+      <label class="control">
+        <span>Stale after days</span>
+        <input id="stale-days" type="number" min="1" value="90" />
+      </label>
+      <p id="scan-status" class="status" role="status">Ready.</p>
+    </div>
+
+    <section class="stories" aria-labelledby="stories-title">
+      <h2 id="stories-title">Life Stories</h2>
+      <div id="empty-state" class="empty-state">
+        <p>No scanned files yet.</p>
+        <p>Choose a folder and run a scan to see which files may be ready for a funeral.</p>
+      </div>
+      <ul id="life-stories" class="life-stories" aria-live="polite"></ul>
+    </section>
+  </section>
+
+  <section id="mausoleum-view" class="view" hidden>
+    <div class="mausoleum-header">
+      <h2>Mausoleum</h2>
+      <button id="close-mausoleum" type="button">Back to Scan</button>
+    </div>
+    <p class="mausoleum-copy">
+      Deleted files rest here with their final epitaphs. Restore any file to return it to its original path.
+    </p>
+    <div id="mausoleum-empty" class="empty-state">
+      <p>The mausoleum is empty.</p>
+      <p>Files you delete from a scan will be listed here.</p>
+    </div>
+    <ul id="mausoleum-list" class="mausoleum-list" aria-live="polite"></ul>
+  </section>
+
+  <div id="epitaph-modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="epitaph-title">
+      <h2 id="epitaph-title">Final Epitaph</h2>
+      <p class="epitaph-file" id="epitaph-file">file.txt</p>
+      <p class="epitaph-story" id="epitaph-story"></p>
+      <label class="control">
+        <span>Epitaph</span>
+        <textarea id="epitaph-input" rows="3" placeholder="Rest peacefully, old report..."></textarea>
+      </label>
+      <div class="modal-actions">
+        <button id="epitaph-cancel" type="button">Keep for Now</button>
+        <button id="epitaph-confirm" type="button" class="primary">Delete to Mausoleum</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js" defer></script>
+</body>
+</html>
